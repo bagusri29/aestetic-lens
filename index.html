@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aesthetic Lens</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Memuat glfx.js dari CDN -->
+    <script src="https://rawcdn.githack.com/evanw/glfx.js/master/glfx.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Aesthetic Lens</h1>
+            <label class="upload-btn">
+                Buka Foto
+                <input type="file" id="imageLoader" accept="image/*" style="display: none;">
+            </label>
+        </header>
+
+        <main class="canvas-wrapper">
+            <p id="placeholder-text">Unggah foto untuk memulai</p>
+            <canvas id="output-canvas"></canvas>
+        </main>
+
+        <footer class="controls">
+            <div class="filter-selector">
+                <button class="filter-btn active" data-filter="normal">Normal</button>
+                <button class="filter-btn" data-filter="cinematic">Cinematic</button>
+                <button class="filter-btn" data-filter="aesthetic">Aesthetic</button>
+                <button class="filter-btn" data-filter="protone">Pro-Tone</button>
+            </div>
+            
+            <div class="slider-container">
+                <label for="intensity-slider">Intensitas Filter & Grain: <span id="intensity-val">100</span>%</label>
+                <input type="range" id="intensity-slider" min="0" max="100" value="100">
+            </div>
+
+            <button id="download-btn" class="download-btn" disabled>Simpan Hasil</button>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
